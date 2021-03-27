@@ -1,16 +1,29 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Mar 24 17:36:09 2021
+Created on Thu Mar 18 11:53:00 2021
 
 @author: wushu
 """
 
-money=int(input("請輸入獲利金額"))
-if money <=100000:
-    print(money*0.1)
-elif money>100000 and money<200000:
-    print(100000*0.1+((money-100000)*0.07))
-elif money>200000 and money<400000:
-    print(100000*0.1+100000*0.07+((money-200000)*0.03))    
-    
-   
+n=1
+m=100
+i=5
+import random
+ans=random.randint(1,100)
+guess=int(input("請輸入1-100整數"))
+while guess!=ans:
+    if i==1:
+        print("沒有猜到")
+        break
+    elif guess<ans:
+        print(guess,"到",m,"之間",i-1,"次機會")
+        guess=int(input("請輸入1-100整數"))
+        i-=1
+    elif guess>ans:
+        print(n,"到",guess,"之間",i-1,"次機會")
+        guess=int(input("請輸入1-100整數"))
+        i-=1
+while guess==ans:    
+    print("猜到了")
+    break
+
