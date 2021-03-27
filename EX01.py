@@ -1,16 +1,21 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Mar 17 18:32:13 2021
+Created on Tue Mar 23 18:21:41 2021
 
 @author: wushu
 """
 
-for i in range(5,0,-1):
-    for a in range(0,i):
-        print("*",end="")
-    print()
+import random
+data=[]
 
-for i in range(2,6):
-    for a in range(0,i):
-        print("*",end="")
-    print()
+for i in range(1,7):
+     if len(data)<6:
+         n=random.randint(1,49)
+     elif len(data)==6:
+         break
+     if data.count(n)==0:
+         data.append(n)
+     elif data.count(n)!=0:
+         i-=1
+data.sort() 
+print(data)
